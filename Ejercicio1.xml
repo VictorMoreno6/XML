@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<groceriies>
+    <column id="1">
+        <item>Iten name</item>
+        <item>Price</item>
+        <item>Quantity</item>
+        <item>Aisle number</item>
+    </column>
+    <column id="2">
+        <item>Milk</item>
+        <item>$3.00</item>
+        <item>1</item>
+        <item>A3</item>
+        
+    </column>
+    <column id="3">
+        <item>Whole Wheat Bread</item>
+        <item>$2.85</item>
+        <item>1</item>
+        <item>A5</item>
+    </column>
+    <column id="4">
+        <item>Carrots</item>
+        <item>$2.00</item>
+        <item>2</item>
+        <item>C2</item>
+    </column>
+    <column id="5">
+        <item>Apples</item>
+        <item>$3.00</item>
+        <item>4</item>
+        <item>C2</item>
+    </column>
+</groceriies>
