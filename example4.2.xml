@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fruits [
+ <!ELEMENT fruits (fruit+)>
+ <!ELEMENT fruit (name, origins, price)>
+ <!ELEMENT origins (origin+)>
+ <!ELEMENT origin (area, country)>
+ <!ELEMENT area (#PCDATA)>
+ <!ELEMENT author (#PCDATA)>
+ <!ELEMENT dateB (#PCDATA)>
+ <!ELEMENT yearB (#PCDATA)>
+ <!ELEMENT isbn (#PCDATA)>
+ <!ATTLIST book isbn CDATA "0">
+ <!ENTITY copyright "Copyright W3Schools.">
+ ]>
+<fruits>
+    <fruit code="x-345">
+        <name>Strawberry</name>
+        <origins>
+            <origin stock="yes">
+                <area>Madrid</area>
+                <country>SP</country>
+            </origin>
+        </origins>
+        <price>3.56</price>
+    </fruit>
+    <fruit code="e-12">
+        <name>Banana</name>
+        <origins>
+            <origin>
+                <area>Canarias</area>
+                <country>SP</country>
+            </origin>
+        </origins>
+        <price>3.56</price>
+    </fruit>
+    <fruit code="s-34">
+        <name>Blueberry</name>
+        <origins>
+            <origin stock="no">
+                <area>Chile</area>
+                <country>Other</country>
+            </origin>
+            <origin>
+                <area>South Africa</area>
+                <country>Other</country>
+            </origin>
+        </origins>
+        <price>3.56</price>
+    </fruit>
+</fruits>

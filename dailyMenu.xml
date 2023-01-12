@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu [
+<!ELEMENT menu (dia+)>
+<!ELEMENT dia (meal*)>
+<!ELEMENT meal (item+)>
+<!ELEMENT item (#PCDATA)>
+<!ATTLIST dia nombre 
+CDATA >
+]>
+
+<menu>
+    <dia name="Monday"
+</menu>
