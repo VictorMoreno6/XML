@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Schema/Ex2.xsd">
+ <book id="jdjd2">
+    <author>Robert Wilson</author>
+    <title>Pirata sin pata</title>
+    <genre>History</genre>
+    <price>24</price>
+    <pub_date>1900-04-30</pub_date>
+    <review></review>
+ </book>
+ <book id="jskd3">
+    <author>Paris Hilton</author>
+    <title>Hey Charlie</title>
+    <genre>History</genre>
+    <price>19.5</price>
+    <pub_date>1990-04-30</pub_date>
+    <review>Good history and it's very fun to read.</review>
+ </book>
+ </books>

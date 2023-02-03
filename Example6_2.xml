@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Schema/example6_2.xsd">
+    <book>
+        <isbn>456</isbn>
+        <title>Los Revelados</title>
+        <author>
+            <name>Jose Sanchis</name>
+            <born>1902-02-15</born>
+            <dead>1945-04-18</dead>
+        </author>
+    </book>
+    <book>
+        <isbn>93059506</isbn>
+        <title>El lazarillo de Tormes</title>
+        <character>
+            <name>Lazarillo</name>
+            <born>1900-04-21</born>
+            <qualification>Very good</qualification>
+        </character>
+    </book>
+</library>

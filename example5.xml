@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Song xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="example5.xsd" prod="Linton" lang="EN">
+    <Id>7</Id>
+    <Title>Jose</Title>
+    <Published>false</Published>
+    <DatePub>2023-01-26</DatePub>
+    <Artist>Quevedo</Artist>
+    <Company>ACME</Company>
+</Song>
