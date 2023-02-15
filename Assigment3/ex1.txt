@@ -1,0 +1,33 @@
+a. All titles of the document
+	XPath Query: /bookShop/book/title
+
+[Line 4] title: Everyday Italian
+[Line 10] title: Harry Potter
+[Line 16] title: XQuery Kick Start
+[Line 36] title: Learning XML
+
+b. All titles of a book of the document
+
+c. All elements of a chapter
+
+d. All elements of a chapter in a section
+
+e. All elements
+
+f. Titles that have a chapter 1
+
+g. The third book with all its information
+
+h. All elements with attributes
+
+i. All elements with a category attribute
+
+j. Books with no cover attribute
+
+k. Elements with two chapters
+
+l. Book’s about markup languages
+
+m. Titles whose author’s name value has more than 15 characters
+
+n. Title of paperback books with more than 30 pages in any chapter
