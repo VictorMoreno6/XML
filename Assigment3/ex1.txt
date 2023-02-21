@@ -1,12 +1,17 @@
 a. All titles of the document
-	XPath Query: /bookShop/book/title
+	
+
+b. All titles of a book of the document
+XPath Query: //title
 
 [Line 4] title: Everyday Italian
 [Line 10] title: Harry Potter
 [Line 16] title: XQuery Kick Start
+[Line 24] title: XML The foundation of XQuery
+[Line 28] title: Understanding the XPath specification
 [Line 36] title: Learning XML
-
-b. All titles of a book of the document
+[Line 39] title: Introduction
+[Line 43] title: Markup and Core Concepts
 
 c. All elements of a chapter
 
