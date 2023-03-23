@@ -1,4 +1,5 @@
 document.getElementById("button-cancel").addEventListener("click", resetForm);
+document.getElementById("button-cancel").addEventListener("click", validate);
 
 function resetForm(ev) {
     ev.preventDefault();
@@ -6,4 +7,8 @@ function resetForm(ev) {
     if (answer) {
         document.getElementById("form-user").reset();
     }
+}
+
+function validate(ev) {
+    ev.preventDefault();
 }
