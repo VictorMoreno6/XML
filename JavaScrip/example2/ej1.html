@@ -2,15 +2,35 @@
 <html>
     <head>
         <script defer src="JS/ej1.js"></script>
+        <style>
+            .form-box{
+                margin-top: 10%;
+                margin-left: 25%;
+            }
+            .form-box input[type="submit"], input[type="reset"] {
+            font-size: 1rem;
+            border: none;
+            padding: 0.25rem 2rem;
+            margin-right: 1rem;
+            color: olive;
+            background-color:aquamarine;
+            cursor: pointer;
+        }
+        </style>
     </head>
     <body>
-        <form>
+        <form id="form-user" action="#" method="post">
             Name:
             <input id="Itext" type="text" minlength="2" maxlength="25" required>
             Age:
-            <input id="IAge" type="number">
+            <input id="IAge" type="text">
             Email:
             <input id="IEmail" type="email">
+            
+            <div class="form-box button">
+                <input type="reset" id="button-cancel" value="Cancel"/>
+                <input type="submit" id="button-send" value="Send" />
+            </div>
         </form>
     </body>
 </html>
