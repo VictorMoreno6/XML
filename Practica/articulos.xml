@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="xslt/ej1.xsl" type="text/xsl"?>
+<articles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="Schema/articulos.xsd">
+    <article type="socks">
+        <detail>Tights</detail>
+        <price>1</price>
+        <command>C</command>
+        <reference>C10</reference>
+    </article>
+    <article type="socks">
+        <detail>Cotton socks</detail>
+        <price>2</price>
+        <command>C</command>
+        <reference>C37</reference>
+    </article>
+    <article type="socks">
+        <detail>Socks pack</detail>
+        <price>1</price>
+        <command>C</command>
+        <reference>C25</reference>
+    </article>
+    <article type="socks">
+        <detail>Short sport socks</detail>
+        <price>1</price>
+        <command>C</command>
+        <reference>C27</reference>
+    </article>
+    <article type="socks">
+        <detail>Long sports socks</detail>
+        <price>8</price>
+        <command>C</command>
+        <reference>C29</reference>
+    </article>
+    <article type="socks">
+        <detail>Pack of stockings</detail>
+        <price>4</price>
+        <command>C</command>
+        <reference>C45</reference>
+    </article>
+    <article type="socks">
+        <detail>Thread socks</detail>
+        <price>15</price>
+        <command>C</command>
+        <reference>C06</reference>
+    </article>
+    <article type="socks">
+        <detail>Nylon socks</detail>
+        <price>2</price>
+        <command>C</command>
+        <reference>C22</reference>
+    </article>
+    <article type="jersey">
+        <detail>Multicolor jumper</detail>
+        <price>10</price>
+        <command>J</command>
+        <reference>J66</reference>
+    </article>
+    <article type="jersey">
+        <detail>Wool sweater</detail>
+        <price>15</price>
+        <command>J</command>
+        <reference>J14</reference>
+    </article>
+    <article type="jersey">
+        <detail>Thread sweater</detail>
+        <price>10</price>
+        <command>J</command>
+        <reference>J15</reference>
+    </article>
+    <article type="jersey">
+        <detail>Cotton sweater</detail>
+        <price>5</price>
+        <command>J</command>
+        <reference>J33</reference>
+    </article>
+    <article type="t-shirts">
+        <detail>Pack of cotton t-shirts</detail>
+        <price>2</price>
+        <command>R</command>
+        <reference>M38</reference>
+    </article>
+    <article type="t-shirts">
+        <detail>Pack of nylon t-shirts</detail>
+        <price>1</price>
+        <command>R</command>
+        <reference>M43</reference>
+    </article>
+    <article type="t-shirts">
+        <detail>Nylon T-shirt</detail>
+        <price>2</price>
+        <command>R</command>
+        <reference>M36</reference>
+    </article>
+    <article type="t-shirts">
+        <detail>Cotton T-shirt</detail>
+        <price>5</price>
+        <command>R</command>
+        <reference>M18</reference>
+    </article>
+    <article type="plugins">
+        <detail>Wool scarf</detail>
+        <price>20</price>
+        <command>M</command>
+        <reference>S08</reference>
+    </article>
+    <article type="plugins">
+        <detail>Nylon cap</detail>
+        <price>4</price>
+        <command>M</command>
+        <reference>S35</reference>
+    </article>
+    <article type="plugins">
+        <detail>Nylon tape</detail>
+        <price>2</price>
+        <command>C</command>
+        <reference>S09</reference>
+    </article>
+    <article type="plugins">
+        <detail>Luxury silk gloves</detail>
+        <price>3</price>
+        <command>M</command>
+        <reference>S80</reference>
+    </article>
+    <article type="plugins">
+        <detail>Scarf pack</detail>
+        <price>1</price>
+        <command>M</command>
+        <reference>S17</reference>
+    </article>
+    <article type="plugins">
+        <detail>Wool cap</detail>
+        <price>1</price>
+        <command>M</command>
+        <reference>S11</reference>
+    </article>
+    <article type="plugins">
+        <detail>Thread hat</detail>
+        <price>3</price>
+        <command>M</command>
+        <reference>S12</reference>
+    </article>
+    <article type="plugins">
+        <detail>Earmuffs</detail>
+        <price>3</price>
+        <command>M</command>
+        <reference>S13</reference>
+    </article>
+</articles>

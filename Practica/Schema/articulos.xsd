@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="articles">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="article" type="articleType" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="articleType">
+        <xs:sequence>
+            <xs:element name="detail" type="detailType" />
+            <xs:element name="price" type="xs:integer" />
+            <xs:element name="command" type="commandType" />
+            <xs:element name="reference" type="refenceType" />
+        </xs:sequence>
+        <xs:attribute name="type" type="typeType" />
+    </xs:complexType>
+    <xs:simpleType name="detailType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>        
+    <xs:simpleType name="refenceType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[SCJM][0-9]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="commandType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="typeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="socks" />
+            <xs:enumeration value="jersey" />
+            <xs:enumeration value="t-shirts" />
+            <xs:enumeration value="plugins" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>
