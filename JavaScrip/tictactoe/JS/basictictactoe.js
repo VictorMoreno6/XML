@@ -6,9 +6,12 @@ buttonGrid.forEach(x => x.addEventListener("click", check))
 function check(event) {
     let selectedButton = even.target;
     if (selectedButton.innerText == "") {
-        checkForWinner();
         selectedButton.innerText = player;
-        changePlayer();
+        if (!checkForWinner()){
+            changePlayer();
+        } else {
+            let message = "";
+        }
     }
 }
 
@@ -33,8 +36,12 @@ function checkForWinner() {
             return true;
         }
     }
-    if (buttonGrid[0].innerHTML === player && buttonGrid.innerHTML[3 + j] === player && buttonGrid.innerHTML[6 + j] === player) {
+    if (buttonGrid[0].innerHTML === player && buttonGrid.innerHTML[4] === player && buttonGrid.innerHTML[8] === player ||
+        buttonGrid[2].innerHTML === player && buttonGrid.innerHTML[4] === player && buttonGrid.innerHTML[6] === player) {
             return true;
         }
     
+}
+function disable(){
+
 }
