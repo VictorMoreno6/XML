@@ -16,7 +16,7 @@ function createGrid() {
 }
 
 function check(event) {
-    let selectedButton = even.target;
+    let selectedButton = event.target;
     if (selectedButton.innerText == "") {
         selectedButton.innerText = player;
         if (!checkForWinner()) {
