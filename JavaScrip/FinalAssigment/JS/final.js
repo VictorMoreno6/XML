@@ -41,4 +41,10 @@ function check(e){
     let x = point[0];
     let y = point [1];
     console.log("The button " + x + ", " + y + " has been clicked.");
+    disableEventsField(e);
+}
+
+function disableEventsField() {
+    let buttonField = document.getElementById("field");
+    buttonField.disableEventsField=true;
 }
