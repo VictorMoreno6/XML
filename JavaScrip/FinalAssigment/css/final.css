@@ -13,20 +13,20 @@ h2{
 	font-size:  2.5em;
 }
 
-#divBoard{
-	margin: auto;
-	width: 750px;
+#field{
+	margin-left: 5px;
+	/*width: 750px;
 	max-width:  100%;
 	display:  flex;
-	flex-wrap:  wrap;
+	flex-wrap:  wrap;*/
 }
 
-#divBoard button{
+/*#field{
 	width: 250px;
 	height: 250px;  
 	max-width: 33.33%;
 	font-size:  10em;
-}
+}*/
 
 #textMessages{
 	
@@ -36,6 +36,8 @@ h2{
 #counters{
     float: left;
     margin-top: 2%;
+	height: 50em;
+	margin-right: 5%;
 }
 
 #message{
