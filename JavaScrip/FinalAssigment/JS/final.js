@@ -3,16 +3,16 @@ document.getElementById("button").addEventListener("click", startGame);
 function startGame(){
     let height=document.getElementById("rows").value;
     let width=document.getElementById("col").value;
+    let level= document.getElementById("level").value;
     document.getElementById("rows").disabled=true;
     document.getElementById("col").disabled=true;
-    drawField(width,height);
     document.getElementById("level").disabled=true;
     document.getElementById("button").disabled=true;
     document.getElementById("crono").innerText="Seconds:";
     document.getElementById("score").innerText="Score:";
     document.getElementById("message").innerText="PLAYING...";
-    
-    
+    drawField(width,height);
+    generateSequence(width, height, level);
 }
 
 function drawField(width,height){
@@ -47,4 +47,10 @@ function check(e){
 function disableEventsField() {
     let buttonField = document.getElementById("field");
     buttonField.disableEventsField=true;
+}
+
+function generateSequence(width, height, level){
+    let number= level*5;
+    let colum= Math.floor(Math.random() * (width - 0 + 1));
+    let row= Math.floor(Math.random() * (height - 0 + 1));
 }
