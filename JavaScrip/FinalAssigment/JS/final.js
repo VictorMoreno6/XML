@@ -66,26 +66,44 @@ function generateSequence(width, height, level){
 
 function playSequence(roundNr){
    
-    const color=[];
-    let myInterval= setInterval(showElement,1000, roundNr,color);
+    
+    let myInterval= setInterval(showElement,1000, roundNr);
     
     
 }
 
-function showElement(roundNr, color){
+function showElement(roundNr){
+        const color=[];
         let[x,y]=sequence[cont];
         console.log("aa")
         let button=document.getElementById(y + "_" + x);
-        color[cont]=button.style.backgroundColor;    
+        let newcolor=button.style.backgroundColor;
+        color.push[newcolor];
+        if (cont > 0) {
+            let i = cont;
+            button.style.backgroundColor = color[i - 1];
+        }    
         button.style.backgroundColor="red";
         cont++;
-        if(cont>0){
-            let i=cont;
-            button.style.backgroundColor=color[i-1];
-        }
+
         
+        
+        if (cont >= sequence.length) { // si se han mostrado todos los elementos
+            clearInterval(myInterval); // detener el temporizador
+            setTimeout(function() { // reestablecer el color original después de 1 segundo
+                for (let i = 0; i < sequence.length; i++) {
+                    let [x, y] = sequence[i];
+                    let button = document.getElementById(y + "_" + x);
+                    button.style.backgroundColor = color[i];
+                }
+                cont = 0;
+                sequence = []; // reiniciar la secuencia para el siguiente nivel
+                roundNr++;
+                startGame(); // iniciar el siguiente nivel
+            }, 1000);
+            return;
+        }
     
-
-   
-
+      
+        
 }
