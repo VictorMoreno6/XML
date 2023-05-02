@@ -2,9 +2,10 @@ document.getElementById("button").addEventListener("click", startGame);
 let sequence=[];
 let cont=0;
 let roundNr=1;
+const color=[];
+let comprobar=0;
 
 function startGame(){
-    //let sequence=[];
     let height=document.getElementById("rows").value;
     let width=document.getElementById("col").value;
     let level= document.getElementById("level").value;
@@ -17,8 +18,7 @@ function startGame(){
     document.getElementById("message").innerText="PLAYING...";
     drawField(width,height);
     generateSequence(width, height, level);
-    
-    playSequence(roundNr)
+    playSequence(roundNr);
 }
 
 function drawField(width,height){
@@ -44,15 +44,28 @@ function drawField(width,height){
 
 function check(e){
     let point = e.target.id.split("_");
+    //let botonx = sequence[comprobar].;
+    //let botony = sequence[]
     let x = point[0];
     let y = point [1];
     console.log("The button " + x + ", " + y + " has been clicked.");
-    disableEventsField(e);
+    if (comprobar < roundNr){
+        if (sequence[comprobar] === point){
+            console.log("bn");
+            comprobar++;
+        }
+        else{
+            document.getElementById("message").innerText="Ha perdido";
+            disableEventsField();
+        }
+    }
 }
 
 function disableEventsField() {
-    let buttonField = document.getElementById("field");
-    buttonField.disableEventsField=true;
+    document.getElementById("field").disabled = true;
+}
+function enableEventsField() {
+    document.getElementById("field").disabled = false;
 }
 
 function generateSequence(width, height, level){
@@ -65,31 +78,16 @@ function generateSequence(width, height, level){
 }
 
 function playSequence(roundNr){
-   
-    
-    let myInterval= setInterval(showElement,1000, roundNr);
-    
-    
-}
-
-function showElement(roundNr){
-        const color=[];
-        let[x,y]=sequence[cont];
-        console.log("aa")
-        let button=document.getElementById(y + "_" + x);
-        let newcolor=button.style.backgroundColor;
-        color.push[newcolor];
-        if (cont > 0) {
-            let i = cont;
-            button.style.backgroundColor = color[i - 1];
-        }    
-        button.style.backgroundColor="red";
-        cont++;
-
-        
-        
-        if (cont >= sequence.length) { // si se han mostrado todos los elementos
-            clearInterval(myInterval); // detener el temporizador
+    //if (cont < roundNr){
+        let myInterval=setInterval(showElement,1000);
+    /*} else{
+        cont=0;
+        roundNr++;
+        console.log("bb")
+    }*/
+    function showElement(roundNr){
+        if (cont === sequence.length) { // si se han mostrado todos los elementos
+            clearInterval(myInterval); // detener el temporizador   ESTA MAL 
             setTimeout(function() { // reestablecer el color original después de 1 segundo
                 for (let i = 0; i < sequence.length; i++) {
                     let [x, y] = sequence[i];
@@ -103,7 +101,71 @@ function showElement(roundNr){
             }, 1000);
             return;
         }
-    
-      
-        
+        console.log("aa")
+        //if (cont <= roundNr){
+            let[x,y]=sequence[cont]; // esta mal no lee nada
+            
+            let button=document.getElementById(y + "_" + x);
+            let newcolor=button.style.backgroundColor;
+            color[cont]=newcolor;
+            if (cont > 0) {
+                let i = cont;
+                button.style.backgroundColor = color[i - 1];
+            }       
+            button.style.backgroundColor="red";
+            setTimeout(returncolor,500);
+            function returncolor(){
+                
+                button.style.backgroundColor= newcolor;
+            }
+            cont++;
+        /*} else{
+            cont = 0;
+            roundNr++;
+        }*/
+        //clearInterval(myInterval);
+       
 }
+}
+
+/*function showElement(roundNr){
+        console.log("aa")
+        //if (cont <= roundNr){
+            let[x,y]=sequence[cont]; // esta mal no lee nada
+            
+            let button=document.getElementById(y + "_" + x);
+            let newcolor=button.style.backgroundColor;
+            color[cont]=newcolor;
+            if (cont > 0) {
+                let i = cont;
+                button.style.backgroundColor = color[i - 1];
+            }       
+            button.style.backgroundColor="red";
+            setTimeout(returncolor,500);
+            function returncolor(){
+                
+                button.style.backgroundColor= newcolor;
+            }
+            cont++;
+        /*} else{
+            cont = 0;
+            roundNr++;
+        }*/
+        //clearInterval(myInterval);
+        /*if (cont >= sequence.length) { // si se han mostrado todos los elementos
+            clearInterval(myInterval); // detener el temporizador   ESTA MAL 
+            setTimeout(function() { // reestablecer el color original después de 1 segundo
+                for (let i = 0; i < sequence.length; i++) {
+                    let [x, y] = sequence[i];
+                    let button = document.getElementById(y + "_" + x);
+                    button.style.backgroundColor = color[i];
+                }
+                cont = 0;
+                sequence = []; // reiniciar la secuencia para el siguiente nivel
+                roundNr++;
+                startGame(); // iniciar el siguiente nivel
+            }, 1000);
+            return;
+        }
+}
+// setTimeout(); //solo pasa una vez*/
