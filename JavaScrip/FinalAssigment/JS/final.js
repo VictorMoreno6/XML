@@ -2,9 +2,12 @@ document.getElementById("button").addEventListener("click", startGame);
 let sequence = [];
 let cont = 0;
 let roundNr = 1;
-const color = [];
+//const color = [];
 let myInterval;
+let timeInterval;
 let comprobar = 0;
+let score=0;
+let crono=0;
 
 function startGame() {
     let height = document.getElementById("rows").value;
@@ -20,6 +23,11 @@ function startGame() {
     drawField(width, height);
     generateSequence(width, height, level);
     playSequence(roundNr);
+    timeInterval = setInterval(time, 1000);
+    function time(){
+        document.getElementById("crono").innerText = "Seconds: " + crono;
+        crono++;
+    }
 }
 
 function drawField(width, height) {
@@ -44,25 +52,29 @@ function drawField(width, height) {
 }
 
 function check(e) {
-    
     let point = e.target.id.split("_");
-    //let botonx = sequence[comprobar].;
-    //let botony = sequence[]
     let x = point[0];
     let y = point[1];
     console.log("The button " + x + ", " + y + " has been clicked.");
     let [xc, yc]= sequence[comprobar];
-    if (x==xc && y==yc) {
+    console.log(xc + "," + yc)
+    if (x == xc) {
         comprobar++;
     } else{
         document.getElementById("message").innerText = "You lose";
+        clearInterval(timeInterval);
     }
-    if (comprobar===roundNr){
-        comprobar=0;
-    }
-    if (roundNr===sequence.length){
+    if (roundNr===sequence.length+1){
         document.getElementById("message").innerText = "You won";
+        clearInterval(timeInterval);
+    } else if(comprobar === roundNr){
+        roundNr++;
+        comprobar=0;
+        score++;
+        document.getElementById("score").innerText = "Score: " + score;
+        playSequence();
     }
+    
 }
 
 function disableEventsField() {
@@ -81,8 +93,8 @@ function enableEventsField() {
 function generateSequence(width, height, level) {
     let number = level * 5;
     for (n = 0; n < number; n++) {
-        let x = Math.floor(Math.random() * (width));
-        let y = Math.floor(Math.random() * (height));
+        let x = Math.floor(Math.random() * (height));
+        let y = Math.floor(Math.random() * (width));
         sequence.push([x, y]);
     }
 }
@@ -112,7 +124,7 @@ function showElement() {
     console.log("aa")
     //if (cont <= roundNr){
     let [x, y] = sequence[cont]; // esta mal no lee nada
-    let button = document.getElementById(y + "_" + x);
+    let button = document.getElementById(x + "_" + y);
     let newcolor = button.style.backgroundColor;
     button.style.backgroundColor = "red";
     setTimeout(returncolor, 500);
@@ -122,7 +134,7 @@ function showElement() {
     cont++;
     if(cont === roundNr && cont<sequence.length){
         cont=0;
-        roundNr=roundNr + 1;
+        //roundNr=roundNr + 1;
         console.log("bb");
         clearInterval(myInterval);
     }
