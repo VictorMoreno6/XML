@@ -19,7 +19,14 @@ function startGame() {
     document.getElementById("message").innerText = "PLAYING...";
     drawField(width, height);
     generateSequence(width, height, level);
-    
+    let rhythm = 0;
+    /*if(){
+
+    } else if(){
+
+    } else if(){
+
+    }*/
     playSequence();
     timeInterval = setInterval(time, 1000);
     let crono = 0;
@@ -50,6 +57,8 @@ function drawField(width, height) {
 }
 
 function check(e) {
+    const color = e.target.style.backgroundColor;
+    changeYellow(e, color);
     let point = e.target.id.split("_");
     let x = point[0];
     let y = point[1];
@@ -125,6 +134,13 @@ function playSequence(rhythm) {
             clearInterval(myInterval);
         }
     }
+}
+
+function changeYellow(e, color){
+    e.target.style.backgroundColor = "yellow";
+    setTimeout(function() {
+        e.target.style.backgroundColor= color;
+    },100);
 }
 
 
