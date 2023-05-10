@@ -4,7 +4,7 @@ let roundNr = 1;
 let timeInterval;
 let comprobar = 0;
 let score = 0;
-
+let rhythm;
 
 function startGame() {
     let height = document.getElementById("rows").value;
@@ -19,14 +19,7 @@ function startGame() {
     document.getElementById("message").innerText = "PLAYING...";
     drawField(width, height);
     generateSequence(width, height, level);
-    let rhythm = 0;
-    /*if(){
-
-    } else if(){
-
-    } else if(){
-
-    }*/
+    setRhythm(level);
     playSequence();
     timeInterval = setInterval(time, 1000);
     let crono = 0;
@@ -74,7 +67,7 @@ function check(e) {
     if (roundNr === sequence.length && comprobar === sequence.length) {
         document.getElementById("message").innerText = "You won";
         clearInterval(timeInterval);
-    } else if (comprobar === roundNr) {
+    } if (comprobar === roundNr && roundNr < sequence.length) {
         roundNr++;
         comprobar = 0;
         score++;
@@ -106,18 +99,16 @@ function generateSequence(width, height, level) {
     }
 }
 
-function playSequence(rhythm) {
+function playSequence() {
     disableEventsField();
     let cont = 0;
-    let myInterval = setInterval(showElement, 1000);
-    setTimeout(enableEventsField, 1000 * roundNr);
+    let myInterval = setInterval(showElement, rhythm);
+    setTimeout(enableEventsField, rhythm * roundNr);
 
     function showElement() {
         if (cont === sequence.length) {
             clearInterval(myInterval);
         }
-        console.log("aa")
-
         let [x, y] = sequence[cont];
         let button = document.getElementById(x + "_" + y);
         let newcolor = button.style.backgroundColor;
@@ -127,10 +118,8 @@ function playSequence(rhythm) {
             button.style.backgroundColor = newcolor;
         }
         cont++;
-        if (cont === roundNr && cont < sequence.length) {
+        if (cont === roundNr) {
             cont = 0;
-            //roundNr=roundNr + 1;
-            console.log("bb");
             clearInterval(myInterval);
         }
     }
@@ -143,6 +132,17 @@ function changeYellow(e, color){
     },100);
 }
 
+function setRhythm(level){
+    if (level == 1){
+        rhythm=1000;
+    }
+    if (level == 2){
+        rhythm=800;
+    }
+    if (level == 3){
+        rhythm=500;
+    }
+}
 
 
 // setTimeout(); //solo pasa una vez*/
